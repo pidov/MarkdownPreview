@@ -7,14 +7,14 @@ import {connect} from 'react-redux'
 import {handleMarkdownChange, loadFile} from '../action_creators'
 
 export const App = React.createClass({
-  handleRawInputChange: function(rawInput) {
+  handleRawInputChange(rawInput) {
     this.props.dispatch(handleMarkdownChange(rawInput));
   },
-  handleFileInputChange: function(e, input) {
+  handleFileInputChange(e, input) {
     var file = input.files[0];
     this.props.dispatch(loadFile(file));
   },
-  render: function() {
+  render() {
     return (
       <div className="md-wrapper">
         <RawInput value={this.props.markdown} onChange={this.handleRawInputChange} fileChange={this.handleFileInputChange}/>

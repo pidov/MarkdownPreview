@@ -1,13 +1,13 @@
 import React from 'react'
 
 export default React.createClass({
-  handleChange: function(e) {
+  handleChange(e) {
     this.props.onChange(this.refs.rawInput.value)
   },
-  handleFileChange: function(e) {
+  handleFileChange(e) {
     this.props.fileChange(e, this.refs.filesInput)
   },
-  render: function() {
+  render() {
     return (
       <div className="md-container md-input">
         <textarea value={this.props.value} onChange={this.handleChange} ref="rawInput"></textarea>

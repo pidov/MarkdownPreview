@@ -1,12 +1,12 @@
 import React from 'react'
 
 export default React.createClass({
-  getMarkup: function() {
+  getMarkup() {
     return {
       __html: this.props.value
     }
   },
-  render: function() {
+  render() {
     return (
      <div dangerouslySetInnerHTML={this.getMarkup()}  className="md-container md-output" ></div>
     )
