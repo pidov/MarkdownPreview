@@ -7,9 +7,7 @@ import {store} from './store'
 
 store.dispatch(setState({
   markdown: '',
-  html: {
-    __html: ''
-  }
+  html: ''
 }));
 
 

@@ -19,5 +19,7 @@ export function loadFile(file) {
     //dispatch(loadingFile(file))
     return readFile(file)
       .then(content => dispatch(handleMarkdownChange(content)))
+      .catch(error => {console.log(error)})
+      //TODO: Log errors to server
   }
 }

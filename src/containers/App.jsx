@@ -27,7 +27,7 @@ export const App = React.createClass({
 function mapStateToProps(state) {
   return {
     markdown: state.get('markdown'),
-    html: state.get('html').toJS()
+    html: state.get('html')
   };
 }
 

@@ -6,15 +6,17 @@ function setState(state, newState) {
   return state.merge(newState);
 }
 
-function parse(rawInput) {
-  return {
-    __html: marked(rawInput, {sanitize: true})
-  }
+function parse (rawInput, options = {}) {
+  return marked(rawInput, options);
 }
 
-function markdownChange(state, markdown) {
-  const parsed = parse(markdown);
-  return state.set('markdown', markdown).set('html', Map(parsed));
+function setMarkdown(state, markdown) {
+  return state.set('markdown', markdown);
+}
+
+
+function setParsed(state) {
+  return state.set('html', parse(state.get('markdown'), {sanitize: true}));
 }
 
 export default function(state = Map(), action) {
@@ -22,7 +24,7 @@ export default function(state = Map(), action) {
   case 'SET_STATE':
     return setState(state, action.state);
   case 'MARKDOWN_CHANGE':
-    return markdownChange(state, action.markdown);
+    return setParsed(setMarkdown(state, action.markdown));
   }
   return state;
 }
