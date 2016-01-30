@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.md-wrapper {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  background: #ccc;
+  min-height: 50%;
+}
+
+.md-container {
+  width: 50%;
+  min-height: 500px;
+  padding: 20px;
+}
+
+.md-container textarea {
+  width: 100%;
+  min-height: 500px;
+}
+
+textarea {
+  resize: none;
+}
