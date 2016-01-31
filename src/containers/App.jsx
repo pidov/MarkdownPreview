@@ -10,15 +10,26 @@ export const App = React.createClass({
   handleRawInputChange(rawInput) {
     this.props.dispatch(handleMarkdownChange(rawInput));
   },
-  handleFileInputChange(e, input) {
-    var file = input.files[0];
+  handleFileInputChange(e) {
+    let file = this.refs.filesInput.files[0];
     this.props.dispatch(loadFile(file));
   },
   render() {
     return (
-      <div className="md-wrapper">
-        <RawInput value={this.props.markdown} onChange={this.handleRawInputChange} fileChange={this.handleFileInputChange}/>
-        <Previewer value={this.props.html}/>
+      <div className="page-wrapper">
+        <header className="page-header">
+          <div className="logo">
+            a
+          </div>
+          <input onChange={this.handleFileInputChange} ref="filesInput" type="file" />
+        </header>
+        <navigation className="side-nav">
+          asd
+        </navigation>
+        <div className="page-content">
+          <RawInput value={this.props.markdown} onChange={this.handleRawInputChange}/>
+          <Previewer value={this.props.html}/>
+        </div>
       </div>
     )
   }

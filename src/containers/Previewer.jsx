@@ -8,7 +8,8 @@ export default React.createClass({
   },
   render() {
     return (
-     <div dangerouslySetInnerHTML={this.getMarkup()}  className="md-container md-output" ></div>
+     <div dangerouslySetInnerHTML={this.getMarkup()}
+     className="md-container md-output" ></div>
     )
   }
 })

@@ -1,19 +1,28 @@
-* {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+$blue: #4baed0;
+$greyish: #343f4b;
+
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
-.md-wrapper {
-  width: 80%;
-  margin: 50px auto;
+.page-content {
   display: flex;
   background: #ccc;
-  min-height: 50%;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  right: 0;
+  bottom: 0;
 }
 
 .md-container {
   width: 50%;
   min-height: 500px;
-  padding: 20px;
 }
 
 .md-container textarea {
@@ -21,6 +30,37 @@
   min-height: 500px;
 }
 
-textarea {
-  resize: none;
+.page-header {
+  background: $greyish;
+  height: 80px;
+  width: 100%;
+}
+
+.md-output {
+  background: #fff;
+  color: #2b2b2b;
+  padding: 0 30px;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.raw-input {
+  background: #fff;
+  height: 500px;
+}
+
+.side-nav {
+  display: flex;
+  width: 80px;
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  background: $blue;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  background: #222c38;
+  float: left;
 }
